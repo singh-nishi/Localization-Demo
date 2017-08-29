@@ -14,13 +14,11 @@ export class AppComponent {
   lang:any;
   constructor(private translate: TranslateService,private activatedRoute: ActivatedRoute) {
     translate.addLangs(["en-GB", "fr", "cn", "hi"]);
-    //translate.setDefaultLang('fr');
     alert(navigator.language);
-  
-    let browserLang = navigator.language;
+   let browserLang = navigator.language;
     alert(browserLang);
     translate.use(browserLang.match(/en-GB|fr|cn|hi/) ? browserLang : 'en-GB');
-    //translate.getTranslation('en');
+    
    
 }
 
