@@ -26,20 +26,5 @@ export class AppComponent {
 
 changeLanguage(lang){
     this.translate.use(lang);
-}
-ngOnInit() {
-  // subscribe to router event
-  this.subscription = this.activatedRoute.queryParams.subscribe(
-    (param: any) => {
-      let locale = param['locale'];
-      if (locale !== undefined){
-          this.translate.use(locale);
-      }
-    });
-}
-
-ngOnDestroy() {
-  // prevent memory leak by unsubscribing
-  this.subscription.unsubscribe();
-}
+    }
 }
