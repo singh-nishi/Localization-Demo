@@ -13,14 +13,14 @@ export class AppComponent {
   private subscription: Subscription;
   lang:any;
   constructor(private translate: TranslateService,private activatedRoute: ActivatedRoute) {
-    translate.addLangs(["en", "fr", "cn", "hi"]);
-    //translate.setDefaultLang('en');
-    
+    translate.addLangs(["en-GB", "fr", "cn", "hi"]);
+    //translate.setDefaultLang('fr');
+    alert(navigator.language);
   
-    let browserLang = translate.getBrowserLang();
+    let browserLang = navigator.language;
     alert(browserLang);
-    translate.use(browserLang.match(/en|fr|cn|hi/) ? browserLang : 'en');
-    
+    translate.use(browserLang.match(/en-GB|fr|cn|hi/) ? browserLang : 'en-GB');
+    //translate.getTranslation('en');
    
 }
 
